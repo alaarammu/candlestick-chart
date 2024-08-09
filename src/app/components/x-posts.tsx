@@ -1,0 +1,62 @@
+"use client";
+import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
+
+const XPosts: React.FC = () => {
+  const [posts, setPosts] = useState<string[]>([]);
+  const [currentPostIndex, setCurrentPostIndex] = useState(0);
+
+  useEffect(() => {
+    const socket = io("http://localhost:3001");
+
+    socket.on("connect", () => {
+      console.log("Connected to server");
+      socket.emit("subscribeXPosts");
+    });
+
+    socket.on("xPostUpdate", (data: string[]) => {
+      setPosts(data);
+    });
+
+    socket.on("disconnect", () => {
+      console.log("Disconnected from server");
+    });
+
+    const intervalId = setInterval(() => {
+      setCurrentPostIndex((prevIndex) => (prevIndex + 1) % posts.length);
+    }, 5000);
+
+    return () => {
+      clearInterval(intervalId);
+      socket.disconnect();
+    };
+  }, [posts.length]);
+
+  return (
+    <div className="p-4 w-80  bg-gray-900 shadow-md h-[300px]">
+      <div className="flex space-x-2 ">
+        <h3 className="text-lg font-semibold text-gray-300 mb-2 ">
+          Follow us on X
+        </h3>
+        <a
+          href="https://x.com/triremetrading"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-yellow-400 font-bold hover:underline mb-3 flex"
+        >
+          @TriremeTrading
+        </a>
+      </div>
+
+      <div className="bg-gray-700 p-5 rounded-md h-[220px] overflow-hidden text-sm text-white border border-spacing-2 border-yellow-400 font-sans text-center text-balance">
+        {posts.length > 0 ? (
+          <p className="animate-scroll">{posts[currentPostIndex]}</p>
+        ) : (
+          <p>Loading posts...</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default XPosts;

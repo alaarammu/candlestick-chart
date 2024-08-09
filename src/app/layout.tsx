@@ -7,6 +7,8 @@ import TradingViewWidget from "./components/chart";
 import OrderBook from "./components/OrderBook";
 import SignUp from "./components/PlaceOrder";
 import CommentCard from "./components/CommentCard";
+import XPosts from "./components/x-posts";
+import SignUpCard from "./components/SignUp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({}) {
   return (
-    <html className="overflow-scroll">
-      <body className="overflow-scroll bg-gray-700">
+    <html>
+      <body className=" bg-gray-700">
         <header className="bg-gray-900">
           <Header />
         </header>
@@ -35,9 +37,19 @@ export default function RootLayout({}) {
                 <SignUp />
               </div>
             </div>
-            <div>
-              <CommentCard />
+
+            <div className="flex flex-row space-x-1">
+              <div className="">
+                <CommentCard />  
+              </div>
+              <div className="">
+              <XPosts />
+              </div>
+              <div>
+                <SignUpCard />
+              </div>
             </div>
+
           </div>
         </main>
         <footer className="bg-gray-900 border-t border-gray-700">

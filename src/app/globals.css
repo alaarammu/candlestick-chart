@@ -15,8 +15,8 @@
   width: 1000px !important;
   height: 580px !important;
   position: relative;
-  margin: 0; /* Remove any default margin */
-  padding: 0; /* Remove any default padding */
+  margin: 0;
+  padding: 0; 
 }
 
 .tradingview-widget-container__widget {
@@ -31,11 +31,11 @@
 }
 
 .bg-red-opacity {
-  background-color: rgba(255, 0, 0, 0.3); /* Red with 30% opacity */
+  background-color: rgba(255, 0, 0, 0.3); 
 }
 
 .bg-green-opacity {
-  background-color: rgba(0, 255, 0, 0.3); /* Green with 30% opacity */
+  background-color: rgba(0, 255, 0, 0.3); 
 }
 
 .bids, .asks {

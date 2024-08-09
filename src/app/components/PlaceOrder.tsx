@@ -37,7 +37,7 @@ const SignUp: React.FC = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="bg-gray-900 pl-3 pr-3 pt-3 pb-3 w-[325px] h-[550px]">
+    <div className="bg-gray-900 pl-3 pr-3 pt-3 pb-3 w-[325px] h-[550px] flex flex-col">
       <div className="flex justify-center mt-3 text-sm">
         <button
           onClick={openModal}
@@ -126,6 +126,23 @@ const SignUp: React.FC = () => {
           </div>
         </div>
       </div>
+
+
+      <div className="flex justify-center mt-10 text-sm" >
+        <button
+          onClick={openModal}
+          className="text-gray-900 pt-2 pb-2 bg-yellow-400 rounded-md font-bold w-[200px]"
+        >
+          Trade
+        </button>
+        <button
+          onClick={openModal}
+          className="text-gray-300 bg-gray-600 font-bold pt-2 pb-2 rounded-md w-[200px]"
+        >
+          Tools
+        </button>
+      </div>
+
 
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </div>
