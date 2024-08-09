@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import io from 'socket.io-client';
+import io from "socket.io-client";
 import Modal from "./MakeBooking";
 
 const socket = io("http://localhost:3001"); // Update with your server URL
@@ -11,25 +11,25 @@ const SignUp: React.FC = () => {
 
   useEffect(() => {
     // Handle incoming order book updates
-    socket.on('orderBookUpdate', (data: { asks: [string, string][] }) => {
-      console.log('Order Book Update Received:', data); // Log received data
+    socket.on("orderBookUpdate", (data: { asks: [string, string][] }) => {
+      console.log("Order Book Update Received:", data); // Log received data
       if (data.asks.length > 0) {
         const topAsk = data.asks[0][0]; // Get the price of the top ask
         const parsedPrice = parseFloat(topAsk);
-        console.log('Parsed Top Ask Price:', parsedPrice); // Log parsed price
+        console.log("Parsed Top Ask Price:", parsedPrice); // Log parsed price
         setTopAskPrice(parsedPrice);
       }
     });
 
     // Request to subscribe to order book updates
-    socket.emit('subscribeOrderBook');
-    console.log('Subscribed to Order Book Updates');
+    socket.emit("subscribeOrderBook");
+    console.log("Subscribed to Order Book Updates");
 
     // Clean up on component unmount
     return () => {
-      socket.off('orderBookUpdate');
+      socket.off("orderBookUpdate");
       socket.disconnect();
-      console.log('WebSocket connection closed');
+      console.log("WebSocket connection closed");
     };
   }, []);
 
@@ -63,12 +63,16 @@ const SignUp: React.FC = () => {
           <label htmlFor="orderPrice" className="text-white mb-2 block text-sm">
             Order Price
           </label>
-          <div className="relative">
+          <div className="relative text-xs">
             <input
               type="text"
               id="orderPrice"
               name="orderPrice"
-              placeholder={topAskPrice !== null ? `Top Ask: ${topAskPrice.toFixed(2)} USDT` : "..."}
+              placeholder={
+                topAskPrice !== null
+                  ? `Top Ask: ${topAskPrice.toFixed(2)} USDT`
+                  : "..."
+              }
               className="w-full bg-gray-700 text-white border border-gray-600 rounded-md p-2 pr-16 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             />
             <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
@@ -78,23 +82,24 @@ const SignUp: React.FC = () => {
         </div>
       </div>
 
-
       <div className="flex items-center my-4">
         <div className="flex-grow">
           <label htmlFor="quantity" className="text-white mb-2 block text-sm">
             Quantity
           </label>
-          <div className="relative">
+          <div className="relative text-xs">
             <input
               type="number"
               id="quantity"
               name="quantity"
               className="w-full bg-gray-700 text-white border border-gray-600 rounded-md p-2 pr-16 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              style={{
-                WebkitAppearance: 'none', // Use camelCase for vendor-specific properties
-                MozAppearance: 'textfield',
-                appearance: 'none'
-              } as React.CSSProperties} // Type assertion to ensure proper handling
+              style={
+                {
+                  WebkitAppearance: "none", // Use camelCase for vendor-specific properties
+                  MozAppearance: "textfield",
+                  appearance: "none",
+                } as React.CSSProperties
+              } // Type assertion to ensure proper handling
             />
             <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
               SOL
@@ -103,13 +108,12 @@ const SignUp: React.FC = () => {
         </div>
       </div>
 
-
       <div className="flex items-center my-4">
         <div className="flex-grow">
           <label htmlFor="orderValue" className="text-white mb-2 block text-sm">
             Order Value
           </label>
-          <div className="relative">
+          <div className="relative text-xs">
             <input
               type="text"
               id="orderValue"
