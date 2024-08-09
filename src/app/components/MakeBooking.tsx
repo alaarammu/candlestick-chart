@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
         <h2 className="text-xl font-bold mb-4 text-center">Sign In Required</h2>
         <p className="mb-4 text-center">
-          Please sign in to continue. If you don't have an account, please sign up.
+          Please sign in to continue. If you don&apos;t have an account, please sign up.
         </p>
         <div className="flex justify-center space-x-4">
           <button
