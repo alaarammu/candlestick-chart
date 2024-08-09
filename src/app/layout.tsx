@@ -26,26 +26,26 @@ export default function RootLayout({}) {
         </header>
         <main>
           <div className="m-2">
-            <div className="flex flex-row space-x-1 ">
+            <div className="flex ">
               <div className="flex-1">
                 <TradingViewWidget />
               </div>
-              <div className="flex-1">
+              <div className="ml-2">
                 <OrderBook />
               </div>
-              <div className="flex-1">
+              <div className="ml-2">
                 <SignUp />
               </div>
             </div>
 
-            <div className="flex flex-row space-x-1">
+            <div className="flex ">
               <div className="">
                 <CommentCard />  
               </div>
-              <div className="">
+              <div className="ml-2">
               <XPosts />
               </div>
-              <div>
+              <div className="ml-2">
                 <SignUpCard />
               </div>
             </div>
