@@ -2,10 +2,12 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 
-// Define types
+// This is the order-book component, depicting the orders directly connected to the trading view chart. The order book data is taken directly from the chart, and it renders live progress in real time, connected via backend websockets. It is also, I believe, accurate prices.
+
+
 interface OrderBookUpdate {
   bids: [string, string][];
-  asks: [string, string][];
+  asks: [string, string][]; //types of orders added
 }
 
 const OrderBook: React.FC = () => {
@@ -60,9 +62,9 @@ const OrderBook: React.FC = () => {
               <span className="text-red-600 px-2">{bid[0]}</span>
               <span className="text-gray-300 px-2">{bid[1]}</span>
               <span className="text-gray-300 px-2">
-                {(parseFloat(bid[0]) * parseFloat(bid[1])).toFixed(2)}
-              </span>
-            </div>
+                {(parseFloat(bid[0]) * parseFloat(bid[1])).toFixed(2)} 
+              </span> 
+            </div> // This will share a full array of all bids from mark 0 - 11, as will below, but for the Asks
           ))}
         </div>
       </div>

@@ -23,18 +23,19 @@ const CommentCard: React.FC = () => {
 
     socketIo.on("connect", () => {
       console.log("Connected to server");
-      socketIo.emit("subscribeComments"); // Subscribe to comments updates
-    });
+      socketIo.emit("subscribeComments"); 
+    }); // to simply connect to the server
 
     socketIo.on("commentsUpdate", (data: Comment[]) => {
-      console.log("Comments updated:", data); // Debug log
-      setComments(data); // Update the comments list
-    });
+      console.log("Comments updated:", data);
+      setComments(data); 
+    }); // connection to websocket to update a comment
+
 
     socketIo.on("commentAdded", (newComment: Comment) => {
-      console.log("New comment added:", newComment); // Debug log
+      console.log("New comment added:", newComment); 
       setComments((prevComments) => {
-        // Prevent duplicates by checking if the comment already exists
+        // Prevent a duplicate of comments
         return prevComments.some((comment) => comment.id === newComment.id)
           ? prevComments
           : [...prevComments, newComment];
@@ -61,8 +62,8 @@ const CommentCard: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (newComment.trim()) {
-      socket?.emit("postComment", { text: newComment }); // Use 'text' field here
-      setNewComment(""); // Clear input field after submitting
+      socket?.emit("postComment", { text: newComment }); 
+      setNewComment(""); // Clear input field after pressing the send button
     }
   };
 
@@ -70,9 +71,11 @@ const CommentCard: React.FC = () => {
     socket?.emit("deleteComment", id);
   };
 
+
+  // Below is for the code which renders the top row of buttons on the component, each not leading to a particular place, but acting as a mock marketing ploy to encourage a user to sign up.
+
   return (
-    <div className="comment-card bg-gray-900 text-white flex flex-col w-[1000px] shadow-md overflow-hidden text-xs font-sans">
-      {/* Top Row of Buttons */}
+    <div className="comment-card bg-gray-900 text-white flex flex-col w-[1000px] shadow-md overflow-hidden text-xs font-sans"> 
       <div className="flex border-b border-gray-700">
         {["Comments", "Order History", "Trade", "Subscriptions", "Orders"].map(
           (title, index) => (
@@ -91,7 +94,6 @@ const CommentCard: React.FC = () => {
         )}
       </div>
 
-      {/* Bottom Content Sections */}
       <div className="flex-1 p-4 bg-gray-800 overflow-scroll">
         {activeSection === 0 && (
           <div className="bg-gray-900 p-4 rounded-md h-full flex flex-col">
@@ -121,7 +123,7 @@ const CommentCard: React.FC = () => {
                 ))
               )}
             </div>
-            {/* Input form for posting comments */}
+
             <form onSubmit={handleSubmit} className="flex items-center">
               <input
                 type="text"

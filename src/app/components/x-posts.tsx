@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 
+// This is a marketing component which connected via websocket. It displays a carousel of mock-tweets posted by the tech body. While I would have liked to use X for developers, of course I do not have access to Trireme's accounts to make this possible.
+
 const XPosts: React.FC = () => {
   const [posts, setPosts] = useState<string[]>([]);
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
@@ -50,7 +52,7 @@ const XPosts: React.FC = () => {
 
       <div className="bg-gray-700 p-5 rounded-md h-[220px]  text-sm text-white border border-yellow-400 font-sans text-center overflow-auto">
         {posts.length > 0 ? (
-          <p className="animate-scroll">{posts[currentPostIndex]}</p>
+          <p className="animate-scroll">{posts[currentPostIndex]}</p> // The posts themselves are available to view via the backend code, and connected to display them on the client-side.
         ) : (
           <p>Loading posts...</p>
         )}

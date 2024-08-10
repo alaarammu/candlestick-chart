@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
-import { PiTrademark } from "react-icons/pi";
 import { IoIosArrowDown } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
+
+
+// A standard header component which includes several ddrop-down buttons leading to various informative ByBit pages relating to the title presented.
+
 
 const navigateTo = (url: string) => {
   window.open(url, "_blank");

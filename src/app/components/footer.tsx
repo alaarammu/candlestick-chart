@@ -2,6 +2,8 @@ import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
+// A footer component which renders some company inforamtion, with a link to the twitter and Instagram account of trireme trading.
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white py-8 text-center w-full">

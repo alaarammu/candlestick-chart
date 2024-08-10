@@ -1,6 +1,9 @@
 "use client";
 import React, { useEffect, useRef, memo } from "react";
 
+
+// An imported component of a chart which depicts the exchange of USDT to Solana
+
 function TradingViewWidget() {
   const container = useRef<HTMLDivElement>(null);
 
