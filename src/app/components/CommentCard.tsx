@@ -154,7 +154,7 @@ const CommentCard: React.FC = () => {
               }
             </h3>
             <p className="text-center">
-              Please 
+              Please
               <button className="ml-1 mr-1 font-bold text-yellow-400">
                 login
               </button>

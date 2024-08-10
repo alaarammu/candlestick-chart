@@ -33,9 +33,9 @@ const XPosts: React.FC = () => {
   }, [posts.length]);
 
   return (
-    <div className="p-4 w-80  bg-gray-900 shadow-md h-[300px]">
-      <div className="flex space-x-2 ">
-        <h3 className="text-lg font-semibold text-gray-300 mb-2 ">
+    <div className="p-4 bg-gray-900 shadow-md h-[300px] flex flex-col justify-between w-full max-w-[325px]">
+      <div className="flex space-x-2">
+        <h3 className="text-lg font-semibold text-gray-300 mb-2">
           Follow us on X
         </h3>
         <a
@@ -48,7 +48,7 @@ const XPosts: React.FC = () => {
         </a>
       </div>
 
-      <div className="bg-gray-700 p-5 rounded-md h-[220px] overflow-hidden text-sm text-white border border-spacing-2 border-yellow-400 font-sans text-center text-balance">
+      <div className="bg-gray-700 p-5 rounded-md h-[220px]  text-sm text-white border border-yellow-400 font-sans text-center overflow-auto">
         {posts.length > 0 ? (
           <p className="animate-scroll">{posts[currentPostIndex]}</p>
         ) : (

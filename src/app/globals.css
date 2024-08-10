@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.full-width-vw {
-  width: 100vw !important; 
-}
+
 
 .comment-card {
   width: 1000px;
@@ -12,9 +10,9 @@
 }
 
 .tradingview-widget-container {
-  width: 1000px !important;
+  width: 1000px ;
   height: 580px !important;
-  position: relative;
+  position: relative ;
   margin: 0;
   padding: 0; 
 }

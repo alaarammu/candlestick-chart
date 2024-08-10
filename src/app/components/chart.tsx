@@ -43,7 +43,7 @@ function TradingViewWidget() {
 
   return (
     <div
-      className="tradingview-widget-container w-[800px] h-[580px]"
+      className="tradingview-widget-container w-[1000px] h-[580px]"
       ref={container}
     >
       <div className="tradingview-widget-container__widget"></div>

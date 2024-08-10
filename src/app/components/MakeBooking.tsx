@@ -9,7 +9,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
+    <div className=" inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
       <div className="bg-gray-800 text-white p-6 rounded-lg mx-4 relative">
         
         <button
