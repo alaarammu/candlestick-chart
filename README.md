@@ -1,3 +1,5 @@
+SEE DEMO: https://streamable.com/o1lu1u
+
 Trireme Trading: Assignment of USDT X SOLANA Candlestick Chart.
 
 This web applications main aim is to depict the exchange rate of USDT x SOLANA in a candlestick chart, and to render the orders (Asks, Bids) in real time via websockets. 
@@ -7,8 +9,6 @@ The application has fulfilled the above through the use of Socket/IO. Please not
 I have taken inspiration from the ByBit page which Trireme has linked in the description of the assignment, on the document. Therefore, I have aimed to follow the same color theme, and recreate a similar style of components.
 
 Importantly: I would like to declare my proficiency in making all of the components fully functional via the backend, however, within the deadline and tight schedule, I have been unable to achieve this aim.
-
-https://streamable.com/o1lu1u
 
                       // RUN LOCALLY INSTRUCTIONS \\
 
