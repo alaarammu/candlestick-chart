@@ -15,16 +15,15 @@ const SignUp: React.FC = () => {
   useEffect(() => {
     // Handle incoming order book updates
     socket.on('orderBookUpdate', (data: { asks: [string, string][] }) => {
-      console.log('Order Book Update Received:', data); // Log received data
+      console.log('Order Book Update Received:', data);
       if (data.asks.length > 0) {
-        const topAsk = data.asks[0][0]; // Get the price of the top ask
+        const topAsk = data.asks[0][0]; 
         const parsedPrice = parseFloat(topAsk);
-        console.log('Parsed Top Ask Price:', parsedPrice); // Log parsed price
+        console.log('Parsed Top Ask Price:', parsedPrice);
         setTopAskPrice(parsedPrice);
       }
     });
 
-    // Request to subscribe to order book updates
     socket.emit('subscribeOrderBook');
     console.log('Subscribed to Order Book Updates');
 
@@ -94,10 +93,10 @@ const SignUp: React.FC = () => {
             name="quantity"
             className="w-full bg-gray-700 text-white border border-gray-600 rounded-md p-2 pr-16 focus:outline-none focus:ring-2 focus:ring-yellow-500"
             style={{
-              WebkitAppearance: 'none', // Use camelCase for vendor-specific properties
+              WebkitAppearance: 'none',
               MozAppearance: 'textfield',
               appearance: 'none'
-            } as React.CSSProperties} // Type assertion to ensure proper handling
+            } as React.CSSProperties}
           />
           <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm">
             SOL
@@ -127,16 +126,16 @@ const SignUp: React.FC = () => {
     </div>
 
 
-      <div className="flex justify-center mt-10 text-sm" >
+      <div className="flex justify-center mt-12 text-sm" >
         <button
           onClick={openModal}
-          className="text-gray-900 pt-2 pb-2 bg-yellow-400 rounded-md font-bold w-[200px]"
+          className="text-gray-900 p-3 bg-yellow-400 rounded-md font-bold w-[200px]"
         >
           Trade
         </button>
         <button
           onClick={openModal}
-          className="text-gray-300 bg-gray-600 font-bold pt-2 pb-2 rounded-md w-[200px]"
+          className="text-gray-300 bg-gray-600 font-bold p-3 rounded-md w-[200px]"
         >
           Tools
         </button>

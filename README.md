@@ -11,8 +11,7 @@ Importantly: I would like to declare my proficiency in making all of the compone
 
                       // RUN LOCALLY INSTRUCTIONS \\
 
-    - This project is fully deployed on vercel, and shared as a github repository. URL: https://github.com/alaarammu/candlestick-chart
-    - Vercel Link: https://candlestick-chart-snowy.vercel.app/
+    - This project is shared as a github repository. URL: https://github.com/alaarammu/candlestick-chart
     - To run the project locally, please pull the code from my github and onto VSCode or any other code editor. In my experience, vercel has rendered the order book data in real time, however, this may be different on another device, depending on whether I would also need to deploy the backend.
     - Please also pull the code on github from the candlestick-chart-api repository. 
     - To run the NEXT.js frontend:
@@ -27,6 +26,7 @@ Importantly: I would like to declare my proficiency in making all of the compone
 Contents:
         - Features
         - Technologies
+        - Tools
         - Project Structure
 
 
