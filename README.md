@@ -8,6 +8,7 @@ I have taken inspiration from the ByBit page which Trireme has linked in the des
 
 Importantly: I would like to declare my proficiency in making all of the components fully functional via the backend, however, within the deadline and tight schedule, I have been unable to achieve this aim.
 
+https://streamable.com/o1lu1u
 
                       // RUN LOCALLY INSTRUCTIONS \\
 
